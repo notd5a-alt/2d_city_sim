@@ -2,6 +2,7 @@
 #include <vector>
 
 #include "tile.hpp"
+#include "player.hpp"
 
 const int WORLD_SIZE_X = 50; // default world size x
 const int WORLD_SIZE_Y = 50; // default world size y

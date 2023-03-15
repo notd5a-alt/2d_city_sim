@@ -16,7 +16,11 @@ enum State {
 
 enum Job { WORKER, CIVILIAN, BUILDER, CHILD, NONE };
 
-struct Attributes {
+struct Parents {
+  float p1_id, p2_id;
+};
+
+struct Attributes { // should scale up as they get older, plateu, then drop down
   float strength;
   float intelligence;
   float speed;
@@ -34,6 +38,7 @@ private:
 
   bool life_status;
   float partner_id; // partner, if not in a relationship then will be -1
+  Parents parents;
 
   std::string name;
   int age;
@@ -44,14 +49,19 @@ private:
 
   Attributes attributes;
   Status status;
+  Job job;
 
 public:
-  Person() : id(rand()), life_status(true), partner_id(-1), name(""), age(0), gender(MALE)
-  , location({}), state(FREE), attributes({0,0,0,0}), status({0,0}) {}
-  Person(int);                  // w id
-  Person(int, Loc);             // w id and Loc
-  Person(int, int, int, float); // w id, x, y, tile_id
-  Person(int, Loc, std::string, Gender);
+  Person()
+      : id(rand()), life_status(true), partner_id(-1), name(""), age(0),
+        gender(MALE), location({}), state(FREE), attributes({0, 0, 0, 0}),
+        status({0, 0}) {}
+  Person(float);                                    // w id
+  Person(float, Loc);                               // w id and Loc
+  Person(float, int, int, float);                   // w id, x, y, tile_id
+  Person(float, Loc, Parents, std::string, Gender); // id, loc, name, gender
+  Person(float, int, int, Parents, float, std::string,
+         Gender); // id, x, y, tile_id, name, gender
 
   // getters and setters
   float getID() const;
@@ -97,8 +107,5 @@ public:
   int move(int, int); // moves person to coord x y
   int move(Loc);      // move to specific Loc
   int move(float);    // move to tile_id
-
-  int assign(float); // assign to building with building_id
+  int assign(float);  // assign to building id
 };
-
-// m4 = m3.operator+(m1.operator+(m2));

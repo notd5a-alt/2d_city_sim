@@ -6,23 +6,7 @@
 
 #include "include/world.hpp"
 
-// std::istream &
-// getline(std::istream &ins,
-//         int &n) { // function to take user input but force integer input
-//   n = 0;
-//   std::string s;
-//   if (std::getline(ins, s)) {
-//     s.erase(s.find_last_not_of(" \f\n\r\t\v") + 1);
-//     std::istringstream ss(s);
-//     ss >> n;
-
-//     if (!ss.eof())
-//       ins.setstate(std::ios::failbit);
-//   }
-//   return ins;
-// }
-
-void print_world(World &world) {
+void print_world(World &world) { // TODO: figure out a way to render people and buildings 
 
   for (int x = 0; x < world.getSizeX(); x++) {
     for (int y = 0; y < world.getSizeY(); y++) {
