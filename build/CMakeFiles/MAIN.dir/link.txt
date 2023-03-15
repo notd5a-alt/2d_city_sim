@@ -1,1 +1,0 @@
-/usr/bin/c++ -rdynamic CMakeFiles/MAIN.dir/main.o CMakeFiles/MAIN.dir/include/world.o CMakeFiles/MAIN.dir/include/tile.o CMakeFiles/MAIN.dir/include/building.o CMakeFiles/MAIN.dir/include/person.o -o MAIN 
