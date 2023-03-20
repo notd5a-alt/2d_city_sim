@@ -63,6 +63,8 @@ public:
   Person(float, int, int, Parents, float, std::string,
          Gender); // id, x, y, tile_id, name, gender
 
+  Person(const Person&); // copy constructor
+
   // getters and setters
   float getID() const;
 

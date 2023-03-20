@@ -80,6 +80,23 @@ Person::Person(float id, int x, int y, Parents parents, float tile_id,
   this->gender = gender;
 }
 
+// Copy constructor
+
+Person::Person(const Person& person) {
+  this->name = person.name;
+  this->id = person.id;
+  this->location = person.location;
+  this->life_status = person.life_status;
+  this->partner_id = person.partner_id;
+  this->parents = person.parents;
+  this->age = person.age;
+  this->gender = person.gender;
+  this->state = person.state;
+  this->attributes = person.attributes;
+  this->status = person.status;
+  this->job = person.job;
+}
+
 // getters and setters
 float Person::getID() const { return this->id; }
 
