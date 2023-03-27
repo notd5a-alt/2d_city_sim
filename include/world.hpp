@@ -1,3 +1,4 @@
+#include <ios>
 #include <string>
 #include <vector>
 
@@ -9,11 +10,13 @@ const int WORLD_SIZE_Y = 50; // default world size y
 
 struct Size {
   int x, y;
+  bool operator==(const Size&) const;
+  bool operator!=(const Size&) const;
 };
 
 class World {
 private:
-  Tile **world; // 2d array of tiles, actual world
+  Tile **world = nullptr; // 2d array of tiles, actual world
   Size size;
   
   std::vector<Person> persons;
@@ -27,6 +30,9 @@ public:
   World(Size); // creates a world of defined size x,y
   World(int, Size); // creates a world with defined seed and size int x, y
   World(int, Size, std::string); // creates world with defined seed, Size and name
+
+  // copy constructor
+  World(World&);
 
   Tile getTile(int, int);
 
@@ -44,6 +50,10 @@ public:
   
   void addBuilding(Building); // adds a building to the world
   void addBuildings(std::vector<Building>); // adds multiple buildings to the world
+
+  // helper fx's 
+  friend bool populateWorld(World, int); // w num of people
+  World operator=(World&);
 
   // destructor
   ~World();
