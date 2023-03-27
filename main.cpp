@@ -59,6 +59,10 @@ int run() { // holds the game loop
   // generate world of size Size
   World world(seed, size, name);
 
+  // generate people
+
+  // generate buildings
+
   while (run) {
     print_world(world);
     run = false;
