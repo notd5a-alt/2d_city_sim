@@ -1,3 +1,7 @@
+#pragma once
+#ifndef TILE_H_
+#define TILE_H_
+
 #include <string> 
 #include <vector>
 #include <cstdlib>
@@ -93,3 +97,5 @@ public:
   
    // remove all buildings and persons and then set all the Tile's attributes to NULL
 };
+
+#endif

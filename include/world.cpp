@@ -227,6 +227,7 @@ World World::operator=(World &world) {
 
 World::~World() { // clean up memory
 
+  // print for debugging purposes
   std::cout << "deleting world of size: {" << size.x << ", " << size.y << "} ."
             << std::endl;
   for (int i = 0; i < this->size.x; i++) {

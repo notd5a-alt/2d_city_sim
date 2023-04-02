@@ -1,3 +1,7 @@
+#pragma once
+#ifndef PERSON_H_
+#define PERSON_H_
+
 #include <string>
 #include <vector>
 
@@ -111,3 +115,5 @@ public:
   int move(float);    // move to tile_id
   int assign(float);  // assign to building id
 };
+
+#endif

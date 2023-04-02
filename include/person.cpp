@@ -82,7 +82,7 @@ Person::Person(float id, int x, int y, Parents parents, float tile_id,
 
 // Copy constructor
 
-Person::Person(const Person& person) {
+Person::Person(const Person &person) {
   this->name = person.name;
   this->id = person.id;
   this->location = person.location;
@@ -146,7 +146,7 @@ void Person::setStatus(int health, int stamina) {
 void Person::setHealth(int health) { this->status.health = health; }
 void Person::setStamina(int stamina) { this->status.stamina = stamina; }
 
-// Other fxs 
+// Other fxs
 // TODO: Add error checking for these functions below
 
 int Person::move(int x, int y) {

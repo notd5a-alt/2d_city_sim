@@ -1,9 +1,15 @@
+#pragma once
+#ifndef WORLD_H_
+#define WORLD_H_
+
 #include <ios>
 #include <string>
 #include <vector>
 
 #include "tile.hpp"
 #include "player.hpp"
+#include "person.hpp"
+#include "building.hpp"
 
 const int WORLD_SIZE_X = 50; // default world size x
 const int WORLD_SIZE_Y = 50; // default world size y
@@ -58,3 +64,5 @@ public:
   // destructor
   ~World();
 };
+
+#endif
